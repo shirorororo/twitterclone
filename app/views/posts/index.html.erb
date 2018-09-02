@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>つぶやき一覧</h1>
+  <ul class="contents">
+    <% @posts.each do |post| %>
+    <li id="content"><%= post.content %></li> 
+    <li id="bottom"><%= link_to '編集', edit_post_path(post), class: 'btn btn-info' %>　　　　<%= link_to '削除', post, method: :delete, data: { confirm: '削除してもよろしいでしょうか?' }, class: 'btn btn-danger' %></li> 
+    <% end %>
+  </ul>
+</div>
+

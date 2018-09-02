@@ -1,0 +1,31 @@
+h1 {
+  padding: 20px;
+  margin: 20px;
+}
+
+#content {
+  margin: 20px 20px 20px 0px;
+  border-radius: 20px;
+  border-style:dotted;
+  border-color:#87ceeb;
+  background:#f0ffff;
+  padding:20px;
+  
+}
+
+ul,li {
+  list-style: none;
+}
+
+.btn-info {
+  background: #87cefa; 
+  border-color: #87cefa;
+  color: #696969;
+}
+
+.btn-danger {
+  background: #ffb6c1; 
+  border-color: #ffb6c1;
+  color: #696969;
+}
+

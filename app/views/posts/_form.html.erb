@@ -1,0 +1,24 @@
+<%= form_with(model: @post, local: true,url: choose_new_or_edit ) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2>エラーにより投稿できません。</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :本文 %>
+    <%= form.text_field :content, id: :post_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "投稿する", class: 'btn btn-info' %>
+  </div>
+<% end %>
+
+ 
