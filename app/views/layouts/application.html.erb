@@ -11,12 +11,22 @@
   <body>
     <header>
       <ul>
-        <li><a href="/tops">TOP</a></li>
-        <li><a href="/posts">つぶやき一覧</a></li>
-        <li><a href="/posts/new">新規投稿</a></li>
+      <% if logged_in? %>
+        <li><%= link_to "TOP", tops_path %></li>
+        <li><%= link_to "投稿一覧", posts_path %></li>
+        <li><%= link_to "新規投稿", new_post_path %></li>
+        <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+      <% else %>
+      　<li><%= link_to "TOP", tops_path %></li>
+        <li><%= link_to "新規登録", new_user_path %></li>
+        <li><%= link_to "ログイン", new_session_path %></li>
+      <% end %>
       </ul>
     </header>
- 
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+
     <%= yield %>
     
     <footer>
